@@ -55,7 +55,7 @@ export const ProductListPage = () => {
       (
         first.length > 1 ? (
           <>
-            {/* <Carrusel productos={first} /> */}
+       
           <SwipperCarousel productos={first} />
 
             <div className="container ">
@@ -71,9 +71,9 @@ export const ProductListPage = () => {
           </>
         ) : first.length === 1 ?
 
-          <div className="container ">
+          
             <PreOrder item={first[0]} button={true} listActions={{ onAddProduct: (id,quantity) => handleAdd(id,quantity) }}/>
-          </div>
+          
 
 
 

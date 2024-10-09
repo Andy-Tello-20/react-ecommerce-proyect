@@ -23,10 +23,10 @@ export const PreOrder = ({ item, listActions }) => {
 
     return (
         <div className="card-show-container">
-            <section className="image-container col-lg-7 col-md-7 col-sm-6">
+            <section className="image-container col-lg-7 col-md-7 col-sm-6 p-2">
                 <img src={thumbnail} alt="" />
             </section>
-            <hr className="separator" />
+            {/* <hr className="separator" /> */}
             <section className="data-container col-md-5">
                 <h1 className="product-title">{title}</h1>
                 <p className="product-price">${price.toLocaleString('es-ES')}</p>
@@ -34,7 +34,7 @@ export const PreOrder = ({ item, listActions }) => {
                 <div className="compra-detalle">
                     <PreOrderComponent productQuantity={quantity} actions={{addUnit,removeUnit}}/>
 
-                    <button className="btn-add-product btn btn-primary" onClick={() => listActions.onAddProduct(_id, quantity)}>Agregar al carrito</button>
+                    <button className="btn-add-product" onClick={() => listActions.onAddProduct(_id, quantity)}>Agregar al carrito</button>
                 </div>
             </section>
 

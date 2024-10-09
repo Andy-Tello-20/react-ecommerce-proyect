@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 
+:root {
+    --buttons-color : #7cbf1e;
+}
+
 body{
     background: #f8f8f8;
 }
@@ -15,20 +19,33 @@ body{
 
 .card-show-container{
     display: flex;
+    max-width: 1184px;
     padding: 2rem;
     background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+    height: 540px;
+}
+
+.image-container{
+    display: flex;
+    /* max-width: 400px; */
+
 }
 
 .image-container img {
     width: 100%;
     object-fit: cover;
+    
 }
 
 
 
 .data-container{
-    
+    border: 1px solid rgba(0, 0, 0, .1);
     padding: 15px;
 }
 
@@ -43,11 +60,12 @@ body{
   }
 
 .product-price{
-    font-size: 35px;
+    font-size: 36px;
+    font-weight: 300;
 }
 .product-title{
-  font-size: 20px;
-  font-weight: 600;
+    font-size: 22px;
+    font-weight: 600;
 
 }
 
@@ -57,7 +75,14 @@ body{
 }
 
 .btn-add-product{
-    background: #3483fa;
+    background: var(--buttons-color);
     padding: 9px 15px;
     border-radius: 7px !important;
+    color: #fff;
+    border: solid 1px #69e055;
+    font-weight: 600;
+}
+
+.btn-add-product:hover{
+    background-color: #a3d65c;
 }

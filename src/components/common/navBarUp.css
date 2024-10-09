@@ -29,7 +29,6 @@ body {
 
 .nav-container {
   /* position: relative; */
-  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -54,7 +53,7 @@ body {
 
 .navbar .logo a {
   font-size: 30px;
-  color: #ffde58;
+  color: var(--buttons-color);
   text-decoration: none;
   font-weight: 600;
 }

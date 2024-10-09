@@ -3,6 +3,7 @@
     align-items: center;
     border: solid 1px #c0c0c0;
     border-radius: 8px;
+    justify-content: center;
 }
 
 .btn-decrement, .btn-increment{

@@ -234,6 +234,8 @@ margin-bottom: 0px !important;
 
 
 .home-section{
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 100vh;
   top: 0;

@@ -2,10 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { DeleteProductToCart } from '../../hooks/deleteProductToCart';
 import { NavLink } from 'react-router-dom';
-import { CartItems } from '../../components/products/CartItems';
 import { LoaderSpinner } from '../../components/common/Loader';
 import { AddProductToCart } from '../../hooks/addProduct';
 import { useFetch } from '../../hooks/useFetch';
+import { CartItems2 } from '../../components/products/CartItem2';
+import './CartPage.css'
+import { SpinnerContainer } from '../../components/common/SpinnerContainer';
 
 
 
@@ -51,7 +53,11 @@ export const CartPage = () => {
 
 
   if (loadingCart) {
-    return <LoaderSpinner />
+
+    return <SpinnerContainer Component={LoaderSpinner}/>
+  
+   
+
 
   }
 
@@ -103,15 +109,52 @@ export const CartPage = () => {
       </div>
     ) : (
       copiProducts.length > 0 ? (
-        <div className='container '>
+        <div className='shopping-body mt-4'>
+
+          <div className="card">
+            <div className="row">
+              <div className="col-md-8 cart">
+                <div className="title-cart">
+
+                  <div className="row">
+                    <div className="col"><h4><b>Shopping Cart</b></h4></div>
+                    <div className="col align-self-center text-right text-muted">3 items</div>
+                  </div>
 
 
-          <CartItems productos={copiProducts}  cartActions={{
-            onRemove: (id) => handleRemove(id),
-            onIncrease: (id, q) => handleIncrease(id, q),
-            onDecrease: (id, q) => handleDecrease(id, q)
+                </div>
+                <CartItems2 productos={copiProducts} cartActions={{
+                  onRemove: (id) => handleRemove(id),
+                  onIncrease: (id, q) => handleIncrease(id, q),
+                  onDecrease: (id, q) => handleDecrease(id, q)
 
-          }} />
+                }} />
+              </div>
+
+              <div className="col-md-4 summary">
+                <div><h5><b>Summary</b></h5></div>
+                <hr />
+                <div className="row">
+                  <div className="col col-style">ITEMS 3</div>
+                  <div className="col text-right">&euro; 132.00</div>
+                </div>
+                <form>
+                  <p>SHIPPING</p>
+                  <select className='shopping-select'><option className="text-muted">Standard-Delivery- &euro;5.00</option></select>
+                  <p>GIVE CODE</p>
+                  <input className='shopping-input' id="code" placeholder="Enter your code" />
+                </form>
+                <div className="row row-style">
+                  <div className="col">TOTAL PRICE</div>
+                  <div className="col text-right">&euro; 137.00</div>
+                </div>
+                <button className="shopping-btn">CHECKOUT</button>
+              </div>
+            </div>
+
+          </div>
+
+
         </div>
       ) : (
         <>

@@ -2,6 +2,27 @@
 
 .swiper{
   margin-bottom: 3rem;
+  width: 100%;
 }
 
+.swiper-pagination{
+  bottom: 30px !important;
+}
 
+span.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: var(--buttons-color);
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+  color: var(--buttons-color);
+  font-weight: 700;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+  color: var(--buttons-color);
+  font-weight: 700;
+}

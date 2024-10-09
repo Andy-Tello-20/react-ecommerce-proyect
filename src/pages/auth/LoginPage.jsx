@@ -31,12 +31,7 @@ export const LoginPage = () => {
   
   console.log('visibleForm desde LoginPage: ', visibleForm)
 
-  // // Si authState es true, no renderiza nada ya que se realiza la redirección en useEffect
-  // if (authState) {
-  //   return null;
-  // }
 
-  // Renderizar LoginForm solo si no está autenticado y no está cargando
   return (
    
     <section className={visibleForm  ? "home show" : "home"}>

@@ -17,7 +17,7 @@ export const MainLayout = () => {
 
       {/* <CartLengthProvider> */}
       <Header />
-        <main className='home-section py-4'>
+        <main className='home-section '>
        
           <Outlet /> {/* Renderiza las rutas hijas */}
         </main>
