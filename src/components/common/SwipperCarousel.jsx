@@ -47,14 +47,35 @@ export const SwipperCarousel = ({ productos }) => {
   return (
     <div className="swiper">
       <div className="swiper-wrapper">
-        {productos &&
+        {/* {productos &&
           productos.map((i, index) => (
             <div className="swiper-slide" key={index}>
               <Link to={`verMas/${i.id}`}>
                 <ShowProduct item={i} />
               </Link>
             </div>
-          ))}
+          ))} */}
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_PCArmadas-jpg.webp" alt="" />
+</div>
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_Actualizacion.png" alt="" />
+</div>
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_MODOsep.png" alt="" />
+</div>
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_Intel-2.png" alt="" />
+</div>
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_AMD9000.png" alt="" />
+</div>
+
 
        
       </div>

@@ -80,12 +80,16 @@ export const NavBarUp = () => {
 
                         <ul className="links">
                             {/* <li><Link to="/">Inicio</Link></li> */}
-                            <li>
+                            <li className='drop-container'>
+                                <div className="drop-perfil">
                                 <Link to="#">PERFIL</Link>
                                 <i className='bx bxs-chevron-down htmlcss-arrow arrow' onClick={() => generalShow(setDropdownOne, dropdownOne)}></i>
+                                </div>
+                                
                                 <ul className={dropdownOne ? "htmlCss-sub-menu sub-menu showDrop" : "htmlCss-sub-menu sub-menu "}>
                                     
-                                    <li><Link to="/profile">Tus datos</Link></li>
+                                    <li className='li-data'><Link to="/profile">Tus datos</Link></li>  
+                                    <li className='li-data'><Link to="/profile">Configuracion</Link></li>  
                                     {/* <li className="more">
                                         <span><Link to="#">More</Link>
                                             <i className='bx bxs-chevron-right arrow more-arrow' onClick={() => generalShow(setDropdownTwo, dropdownTwo)}></i>
@@ -122,7 +126,7 @@ export const NavBarUp = () => {
                                 </li>
                             </Link>
 
-                            <li><Link to="#" onClick={sessionClose}>SALIR</Link></li>
+                            <li className='li-exit'><Link to="#" onClick={sessionClose}>SALIR</Link></li>
                         </ul>
 
                         :

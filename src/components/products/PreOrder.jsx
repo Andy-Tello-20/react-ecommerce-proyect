@@ -29,10 +29,28 @@ export const PreOrder = ({ item, listActions }) => {
             {/* <hr className="separator" /> */}
             <section className="data-container col-md-5">
                 <h1 className="product-title">{title}</h1>
-                <p className="product-price">${price.toLocaleString('es-ES')}</p>
+                <div className="stars-valuation">
+                        <i className='bx bxs-star' ></i>
+                        <i className='bx bxs-star' ></i>
+                        <i className='bx bxs-star' ></i>
+                        <i className='bx bxs-star' ></i>
+                        <i className='bx bx-star' ></i>
+                    </div>
+
+                 <div className="price-info-container">
+                    <p className='price-info'>Precio especial</p>
+                    <p className="product-price">${price.toLocaleString('es-ES')}</p>
+                 </div>
+
+                
 
                 <div className="compra-detalle">
-                    <PreOrderComponent productQuantity={quantity} actions={{addUnit,removeUnit}}/>
+
+                    <div className="quantity-order">
+                        <p>Cantidad:</p>
+                        <PreOrderComponent productQuantity={quantity} actions={{addUnit,removeUnit}}/>
+                    </div>
+                    
 
                     <button className="btn-add-product" onClick={() => listActions.onAddProduct(_id, quantity)}>Agregar al carrito</button>
                 </div>

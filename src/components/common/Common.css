@@ -15,14 +15,35 @@ span.swiper-pagination-bullet {
   background: var(--buttons-color);
 }
 
+
+.swiper-button-next, .swiper-button-prev{
+  padding: 25px !important;
+  background: #a8a7a7;
+  border-radius: 10px;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{
+background: rgba(71, 201, 115, 1) !important;
+}
+
+
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   content: 'next';
   color: var(--buttons-color);
   font-weight: 700;
+  font-size: 27px !important;
+    color: #fff;
 }
+
+
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
   content: 'prev';
   color: var(--buttons-color);
   font-weight: 700;
+  font-size: 27px !important;
+    color: #fff;
 }
+
+
+

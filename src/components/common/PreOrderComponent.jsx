@@ -5,7 +5,7 @@ import { LoaderSpinner } from './Loader'
 export const PreOrderComponent = ({ productQuantity, actions, cartActions, idProduct, loader }) => {
 
   return (
-    <div className="increment-decrement">
+    <div className="increment-decrement mb-3">
   
       {loader ? (
         <div className="loader-spinner"><LoaderSpinner/></div> // Aquí podrías tener un spinner visual o texto
