@@ -1,0 +1,13 @@
+/* Estilos compartidos entre los formularios de autenticación */
+
+.loaderContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    right: -2px;
+    top: 100px;
+}
+

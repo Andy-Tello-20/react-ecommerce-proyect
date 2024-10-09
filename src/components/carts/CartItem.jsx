@@ -1,0 +1,1 @@
+// Componente que representa un producto en el carrito

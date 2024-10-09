@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+body{
+    background: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+
+.card-show-container{
+    display: flex;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+.data-container{
+    
+    padding: 15px;
+}
+
+.data-container > * {
+    margin-bottom: 35px !important;
+  }
+
+.separator {
+    border: 1px #000 solid !important;
+    margin: 0px !important;
+   
+  }
+
+.product-price{
+    font-size: 35px;
+}
+.product-title{
+  font-size: 20px;
+  font-weight: 600;
+
+}
+
+.compra-detalle{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-add-product{
+    background: #3483fa;
+    padding: 9px 15px;
+    border-radius: 7px !important;
+}
