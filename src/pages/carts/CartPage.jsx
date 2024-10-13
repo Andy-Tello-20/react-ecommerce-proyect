@@ -31,7 +31,8 @@ export const CartPage = () => {
     if (cartData) {
       const dataProducts = cartData.cart.products.map(item => ({
         product: item.product,
-        quantity: item.quantity
+        quantity: item.quantity,
+        lastPrice: item.lastPrice
       }));
 
       console.log('dataProducts es: ', dataProducts)
@@ -101,6 +102,16 @@ export const CartPage = () => {
     }
   };
 
+
+  
+
+  const sumatory= copiProducts.reduce((acumulador, valorActual)=> {
+
+    let suma = acumulador +(valorActual.product.price * valorActual.quantity)
+    return suma
+  } ,0)
+
+
   return (
 
     errorCart ? (
@@ -118,7 +129,7 @@ export const CartPage = () => {
 
                   <div className="row">
                     <div className="col"><h4><b>Shopping Cart</b></h4></div>
-                    <div className="col align-self-center text-right text-muted">3 items</div>
+                    <div className="col align-self-center text-right text-muted">{copiProducts.length} items</div>
                   </div>
 
 
@@ -135,8 +146,10 @@ export const CartPage = () => {
                 <div><h5><b>Summary</b></h5></div>
                 <hr />
                 <div className="row">
-                  <div className="col col-style">ITEMS 3</div>
-                  <div className="col text-right">&euro; 132.00</div>
+
+                  {copiProducts.length >1 ? <div className="col col-style">ITEMS {copiProducts.length}</div> : <div className="col col-style">ITEM {copiProducts.length}</div>}
+                  
+                  <div className="col text-right">$ {(sumatory).toLocaleString('es-ES')}</div>
                 </div>
                 <form>
                   <p>SHIPPING</p>
@@ -146,7 +159,7 @@ export const CartPage = () => {
                 </form>
                 <div className="row row-style">
                   <div className="col">TOTAL PRICE</div>
-                  <div className="col text-right">&euro; 137.00</div>
+                  <div className="col text-right total-price">$ {(sumatory).toLocaleString('es-ES')}</div>
                 </div>
                 <button className="shopping-btn">CHECKOUT</button>
               </div>

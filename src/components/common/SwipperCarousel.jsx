@@ -47,18 +47,16 @@ export const SwipperCarousel = ({ productos }) => {
   return (
     <div className="swiper">
       <div className="swiper-wrapper">
-        {/* {productos &&
-          productos.map((i, index) => (
-            <div className="swiper-slide" key={index}>
-              <Link to={`verMas/${i.id}`}>
-                <ShowProduct item={i} />
-              </Link>
-            </div>
-          ))} */}
+       
 
 <div className="swiper-slide">
   <img src="https://mlx.com.ar/wp-content/uploads/Slide_PCArmadas-jpg.webp" alt="" />
 </div>
+
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/Slide_CM-42.png" alt="" />
+</div>
+
 
 <div className="swiper-slide">
   <img src="https://mlx.com.ar/wp-content/uploads/Slide_Actualizacion.png" alt="" />
@@ -77,6 +75,20 @@ export const SwipperCarousel = ({ productos }) => {
 </div>
 
 
+<div className="swiper-slide">
+  <img src="https://mlx.com.ar/wp-content/uploads/WEBBANNER-SC-MLX-PRODUCTOS-jpg.webp" alt="" />
+</div>
+
+
+
+ {/* {productos &&
+          productos.map((i, index) => (
+            <div className="swiper-slide" key={index}>
+              <Link to={`verMas/${i.id}`}>
+                <ShowProduct item={i} />
+              </Link>
+            </div>
+          ))} */}
        
       </div>
 

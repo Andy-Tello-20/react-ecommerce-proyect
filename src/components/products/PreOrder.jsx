@@ -5,6 +5,8 @@ import { PreOrderComponent } from '../common/PreOrderComponent'
 
 export const PreOrder = ({ item, listActions }) => {
 
+
+
     const [quantity, setQuantity] = useState(1);
 
     const addUnit = () => {
@@ -19,7 +21,7 @@ export const PreOrder = ({ item, listActions }) => {
     }
 
 
-    const { title, description, thumbnail, price, _id } = item
+    const { title, description, thumbnail, price, _id,stock } = item
 
     return (
         <div className="card-show-container">
@@ -36,6 +38,7 @@ export const PreOrder = ({ item, listActions }) => {
                         <i className='bx bxs-star' ></i>
                         <i className='bx bx-star' ></i>
                     </div>
+                <p className='price-info'>Stock: {stock}</p>
 
                  <div className="price-info-container">
                     <p className='price-info'>Precio especial</p>

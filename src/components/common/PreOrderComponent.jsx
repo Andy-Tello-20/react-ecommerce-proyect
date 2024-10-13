@@ -8,7 +8,7 @@ export const PreOrderComponent = ({ productQuantity, actions, cartActions, idPro
     <div className="increment-decrement mb-3">
   
       {loader ? (
-        <div className="loader-spinner"><LoaderSpinner/></div> // Aquí podrías tener un spinner visual o texto
+        <div className="loader-spinner"><LoaderSpinner size='28' color='#7cbf1e'/></div> // Aquí podrías tener un spinner visual o texto
       ) : (
         <>
           {actions ? (

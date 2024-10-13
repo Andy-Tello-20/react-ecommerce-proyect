@@ -8,22 +8,23 @@ import './ProductPage.css'
 import { LoaderSpinner } from '../../components/common/Loader';
 import { SwipperCarousel } from '../../components/common/SwipperCarousel';
 import { PreOrder } from '../../components/products/PreOrder';
+import { SpinnerContainer } from '../../components/common/SpinnerContainer';
 
 
 export const ProductListPage = () => {
   const { data: productsData, error: errorProducts, loading: loadingProducts } = useFetch('http://localhost:8080/api/products');
 
   //Al inicio "first" será un array vacio porque inicialmente "products" será undefined o null porque useFetch es un hook asíncrono que aún no habrá terminado de obtener los datos cuando el componente se monte por primera vez
- 
+
   const [first, setFirst] = useState([]);
   const { id } = useParams();
 
 
   const { fetchAdd } = AddProductToCart()
 
-  const handleAdd = (productId,quantity) => {
+  const handleAdd = (productId, quantity) => {
     console.log(`Producto para agregar con ID: ${productId}`)
-    fetchAdd(productId,quantity)
+    fetchAdd(productId, quantity)
   }
 
 
@@ -42,7 +43,8 @@ export const ProductListPage = () => {
   // console.log('que es first', first)
 
   if (loadingProducts) {
-    return <LoaderSpinner/>
+    return <SpinnerContainer Component={LoaderSpinner} />
+
   }
 
   return (
@@ -55,8 +57,8 @@ export const ProductListPage = () => {
       (
         first.length > 1 ? (
           <>
-       
-          <SwipperCarousel productos={first} />
+
+            <SwipperCarousel productos={first} />
 
             <div className="container ">
               <div className='box-container'>
@@ -71,9 +73,9 @@ export const ProductListPage = () => {
           </>
         ) : first.length === 1 ?
 
-          
-            <PreOrder item={first[0]} button={true} listActions={{ onAddProduct: (id,quantity) => handleAdd(id,quantity) }}/>
-          
+
+          <PreOrder item={first[0]} button={true} listActions={{ onAddProduct: (id, quantity) => handleAdd(id, quantity) }} />
+
 
 
 

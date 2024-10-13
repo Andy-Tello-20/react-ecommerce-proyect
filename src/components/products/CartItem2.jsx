@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-// import './cartItems.css';
+import { Tooltip } from 'react-tooltip'
+import './cartItems2.css'
+
 import { PreOrderComponent } from '../common/PreOrderComponent';
 
 export const CartItems2 = ({ productos, cartActions }) => {
@@ -25,7 +27,7 @@ export const CartItems2 = ({ productos, cartActions }) => {
 
     return (
         productos && productos.map((p) => (
-           
+
 
             <div className="row border-top border-bottom" key={p.product._id}>
                 <div className="row main align-items-center">
@@ -36,6 +38,9 @@ export const CartItems2 = ({ productos, cartActions }) => {
                     </div>
                     <div className="col">
 
+
+
+
                         <PreOrderComponent
                             productQuantity={p.quantity}
                             loader={loadingProductId === p.product._id} // Solo muestra o se pasa la prop loader en el producto actual
@@ -45,11 +50,35 @@ export const CartItems2 = ({ productos, cartActions }) => {
                             }}
                             idProduct={p.product._id}
                         />
-                        {/* <a href="#">-</a>
-                        <a href="#" className="border">1</a>
-                        <a href="#">+</a> */}
+
                     </div>
-                    <div className="col col-price">${(p.product.price * p.quantity).toLocaleString('es-ES')} 
+                    <div className="col col-price pf-container">${(p.product.price * p.quantity).toLocaleString('es-ES')}
+
+
+
+
+
+                        {p.product.price < p.lastPrice ? (
+
+                            <>
+                                <del className='lastPrice'>${(p.lastPrice).toLocaleString('es-ES')}</del>
+                                <button className='btn-info' data-tooltip-id={p.product._id}
+                                    data-tooltip-content="Este producto disminuyó su precio"
+                                    data-tooltip-place="top">
+                                    i
+                                </button>
+                            </>
+
+
+                        ) : p.product.price > p.lastPrice ? (
+                            <button  className='btn-info'data-tooltip-id={p.product._id}
+                                data-tooltip-content="Este producto aumentó su precio"
+                                data-tooltip-place="top">
+                                i
+                            </button>
+                        ) : null}
+
+                        <Tooltip id={p.product._id} />
                         <span className="close" onClick={() => handleRemove(p.product._id)}>&#10005;</span></div>
                 </div>
             </div>

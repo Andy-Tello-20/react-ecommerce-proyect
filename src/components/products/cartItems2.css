@@ -1,0 +1,24 @@
+.lastPrice{
+    text-decoration: line-through;
+    font-size: 13px;
+    font-weight: 600;
+    color: gray;
+    position: absolute;
+    top: -18px;
+}
+
+
+.btn-info{
+    position: absolute;
+    left: 80px;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    background: #bae4eb;
+    color: #000000;
+    font-weight: 700;
+}
+
+.pf-container{
+    position: relative
+}
