@@ -32,10 +32,10 @@ export const CartItems2 = ({ productos, cartActions }) => {
 
             <div className="row border-top border-bottom" key={p.product._id}>
                 <div className="row main align-items-center">
-               <div className="col-2">
-               <Link to={`/verMas/${p.product.id}`} >  <img className="img-fluid" src={p.product.thumbnail} alt='' /></Link>
-                </div>
-                    <div className="col">
+                    <div className={p.product.stock < p.quantity ? "item-disable col-2" : "col-2"}>
+                        <Link to={`/verMas/${p.product.id}`} >  <img className="img-fluid" src={p.product.thumbnail} alt='' /></Link>
+                    </div>
+                    <div className={p.product.stock < p.quantity ? "item-disable col" : "col"}>
                         {/* <div className="row text-muted">Shirt</div> */}
                         <div className="row">{p.product.title}</div>
                     </div>
@@ -55,10 +55,22 @@ export const CartItems2 = ({ productos, cartActions }) => {
                         />
 
                     </div>
-                    <div className="col col-price pf-container">${(p.product.price * p.quantity).toLocaleString('es-ES')}
+                    <div className="col col-price pf-container">
+                        <div className={p.product.stock < p.quantity ? "item-disable" : undefined}>
+                            ${(p.product.price * p.quantity).toLocaleString('es-ES')}
+                        </div>
 
+                        {
+                            p.product.stock < p.quantity
 
+                            &&
 
+                            <li className='bx bx-info-circle btn-info' data-tooltip-id={p.product._id}
+                                data-tooltip-content="Este producto no tiene suficiente stock"
+                                data-tooltip-place="top">
+
+                            </li>
+                        }
 
 
                         {p.product.price < p.lastPrice ? (
@@ -69,7 +81,7 @@ export const CartItems2 = ({ productos, cartActions }) => {
                                 <li className='bx bx-info-circle btn-info' data-tooltip-id={p.product._id}
                                     data-tooltip-content="Este producto ha reducido su precio recientemente."
                                     data-tooltip-place="top">
-                                    
+
                                 </li>
                             </>
 
@@ -79,13 +91,15 @@ export const CartItems2 = ({ productos, cartActions }) => {
                             <li clasName='bx bx-info-circle btn-info' data-tooltip-id={p.product._id}
                                 data-tooltip-content="Este producto ha aumentó su precio recientemente."
                                 data-tooltip-place="top">
-                                
+
                             </li>
                         ) : null}
 
                         <Tooltip id={p.product._id} />
-                        <span className="close" onClick={() => handleRemove(p.product._id)}>&#10005;</span></div>
+                        <span className="close" onClick={() => handleRemove(p.product._id)}>&#10005;</span>
+                    </div>
                 </div>
+
             </div>
         ))
     );

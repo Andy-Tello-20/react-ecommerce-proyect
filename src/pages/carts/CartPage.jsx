@@ -9,6 +9,8 @@ import { CartItems2 } from '../../components/products/CartItem2';
 import './CartPage.css'
 import { SpinnerContainer } from '../../components/common/SpinnerContainer';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import { Purchase } from '../../hooks/purchase';
+
 initMercadoPago('APP_USR-90de6bf5-3d87-4363-9799-51af21718e99')
 
 
@@ -21,15 +23,19 @@ export const CartPage = () => {
   const { data: cartData, error: errorCart, loading: loadingCart } = useFetch('http://localhost:8080/api/userCart')
 
 
-  console.log('data es: ', cartData)
 
   const { fetchAdd } = AddProductToCart()
 
+  const { fetchMercadoPago, loading, preferenceId } = Purchase()
+
   const { data: newData, fetchDelete } = DeleteProductToCart();
 
-  const [preferenceId, setPreferenceId] = useState(null)
+
   const [copiProducts, setcopiProducts] = useState([])
+
   // console.log('loadingCart: ', loadingCart)
+
+
 
   useEffect(() => {
 
@@ -52,23 +58,16 @@ export const CartPage = () => {
 
   useEffect(() => {
 
-    setcopiProducts(newData); // Actualizamos el estado con los productos filtrados
+    setcopiProducts(newData)
 
 
   }, [newData])
-
-  // console.log('ahora copiProducts es: ', copiProducts)
-
-
 
 
 
   if (loadingCart) {
 
     return <SpinnerContainer Component={LoaderSpinner} />
-
-
-
 
   }
 
@@ -114,30 +113,20 @@ export const CartPage = () => {
 
 
 
-
+  console.log('copiProduct es: ', copiProducts)
   const sumatory = copiProducts.reduce((acumulador, valorActual) => {
 
-    let suma = acumulador + (valorActual.product.price * valorActual.quantity)
-    return suma
+    //? Si el producto en el carrito supera el stock disponible no se sumara
+    if (valorActual.product.stock >= valorActual.quantity) {
+      acumulador += (valorActual.product.price * valorActual.quantity)
+    }
+   
+    return acumulador
   }, 0)
 
 
-  const fetchMercadoPago = async () => {
-
-    const response = await fetch(`http://localhost:8080/api/create_preference`, {
-      method: 'POST',
-      credentials: 'include',
-    })
 
 
-    if (response.ok) {
-      const result = await response.json()
-      console.log('response es: ', result)
-
-      setPreferenceId(result)
-    }
-
-  }
 
 
 
@@ -192,7 +181,12 @@ export const CartPage = () => {
                 </div>
 
                 <div className="btn-check-container">
-                  <button className="shopping-btn" onClick={fetchMercadoPago}>CHECKOUT</button>
+
+                  {loading !== false && (
+                    <button className="shopping-btn" onClick={fetchMercadoPago}>
+                      {loading ? <LoaderSpinner size='28' color='#fff' /> : "CONFIRMAR"}
+                    </button>
+                  )}
 
                   {preferenceId &&
                     <Wallet className="shopping-btn" initialization={{ preferenceId }} />
