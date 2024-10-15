@@ -26,13 +26,13 @@ const [errorFetch, setErrorFetch] = useState(null);
 
 
   // Función para hacer la petición DELETE
-  const fetchAdd = async ( productId,quantity) => {
+  const fetchAdd = async ( productId,quantity,URL) => {
 
-    
+    console.log('se ejecuta fetchAdd')
 
     try {
       
-      const response = await fetch(`http://localhost:8080/api/carts/product/${productId}/${quantity}`, {
+      const response = await fetch(`${URL}/${productId}/${quantity}`, {
         method: 'POST',
         credentials: 'include',
       });

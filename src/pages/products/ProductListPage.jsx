@@ -24,7 +24,10 @@ export const ProductListPage = () => {
 
   const handleAdd = (productId, quantity) => {
     console.log(`Producto para agregar con ID: ${productId}`)
-    fetchAdd(productId, quantity)
+
+    const URL= 'http://localhost:8080/api/carts/preOrderProduct'
+
+    fetchAdd(productId, quantity, URL)
   }
 
 

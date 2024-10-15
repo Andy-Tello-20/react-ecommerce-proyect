@@ -3,6 +3,7 @@ import { Tooltip } from 'react-tooltip'
 import './cartItems2.css'
 
 import { PreOrderComponent } from '../common/PreOrderComponent';
+import { Link } from 'react-router-dom';
 
 export const CartItems2 = ({ productos, cartActions }) => {
     const [loadingProductId, setLoadingProductId] = useState(null); // Estado para controlar qué producto está cargando
@@ -31,7 +32,9 @@ export const CartItems2 = ({ productos, cartActions }) => {
 
             <div className="row border-top border-bottom" key={p.product._id}>
                 <div className="row main align-items-center">
-                    <div className="col-2"><img className="img-fluid" src={p.product.thumbnail} alt='' /></div>
+               <div className="col-2">
+               <Link to={`/verMas/${p.product.id}`} >  <img className="img-fluid" src={p.product.thumbnail} alt='' /></Link>
+                </div>
                     <div className="col">
                         {/* <div className="row text-muted">Shirt</div> */}
                         <div className="row">{p.product.title}</div>
@@ -62,20 +65,22 @@ export const CartItems2 = ({ productos, cartActions }) => {
 
                             <>
                                 <del className='lastPrice'>${(p.lastPrice).toLocaleString('es-ES')}</del>
-                                <button className='btn-info' data-tooltip-id={p.product._id}
-                                    data-tooltip-content="Este producto disminuyó su precio"
+
+                                <li className='bx bx-info-circle btn-info' data-tooltip-id={p.product._id}
+                                    data-tooltip-content="Este producto ha reducido su precio recientemente."
                                     data-tooltip-place="top">
-                                    i
-                                </button>
+                                    
+                                </li>
                             </>
 
 
                         ) : p.product.price > p.lastPrice ? (
-                            <button  className='btn-info'data-tooltip-id={p.product._id}
-                                data-tooltip-content="Este producto aumentó su precio"
+
+                            <li clasName='bx bx-info-circle btn-info' data-tooltip-id={p.product._id}
+                                data-tooltip-content="Este producto ha aumentó su precio recientemente."
                                 data-tooltip-place="top">
-                                i
-                            </button>
+                                
+                            </li>
                         ) : null}
 
                         <Tooltip id={p.product._id} />

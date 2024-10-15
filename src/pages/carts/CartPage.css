@@ -10,7 +10,13 @@
 } */
 
 
+.btn-check-container{
+    width: 100%;
+}
 
+button.svelte-h6o0kp.mercadopago-color-2OUiJu {
+    min-width: 100% !important;
+}
 
 .shopping-body {
     /* background: #ddd; 

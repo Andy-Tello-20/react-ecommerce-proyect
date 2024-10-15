@@ -8,19 +8,26 @@ import { useFetch } from '../../hooks/useFetch';
 import { CartItems2 } from '../../components/products/CartItem2';
 import './CartPage.css'
 import { SpinnerContainer } from '../../components/common/SpinnerContainer';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+initMercadoPago('APP_USR-90de6bf5-3d87-4363-9799-51af21718e99')
 
 
 
 export const CartPage = () => {
 
 
+
+
   const { data: cartData, error: errorCart, loading: loadingCart } = useFetch('http://localhost:8080/api/userCart')
 
+
+  console.log('data es: ', cartData)
 
   const { fetchAdd } = AddProductToCart()
 
   const { data: newData, fetchDelete } = DeleteProductToCart();
 
+  const [preferenceId, setPreferenceId] = useState(null)
   const [copiProducts, setcopiProducts] = useState([])
   // console.log('loadingCart: ', loadingCart)
 
@@ -29,7 +36,7 @@ export const CartPage = () => {
     // console.log('useEffect escucho cambios')
 
     if (cartData) {
-      const dataProducts = cartData.cart.products.map(item => ({
+      const dataProducts = cartData.products.map(item => ({
         product: item.product,
         quantity: item.quantity,
         lastPrice: item.lastPrice
@@ -53,11 +60,14 @@ export const CartPage = () => {
   // console.log('ahora copiProducts es: ', copiProducts)
 
 
+
+
+
   if (loadingCart) {
 
-    return <SpinnerContainer Component={LoaderSpinner}/>
-  
-   
+    return <SpinnerContainer Component={LoaderSpinner} />
+
+
 
 
   }
@@ -79,10 +89,10 @@ export const CartPage = () => {
     });
   };
 
-
+  const URL = 'http://localhost:8080/api/carts/product'
   const handleIncrease = async (productId, quantity) => {
     const newQuantity = quantity + 1;
-    await fetchAdd(productId, newQuantity);
+    await fetchAdd(productId, newQuantity, URL);
 
 
     const updatedCart = updateProductQuantity(copiProducts, productId, newQuantity);
@@ -94,7 +104,7 @@ export const CartPage = () => {
   const handleDecrease = async (productId, quantity) => {
     if (quantity > 1) {
       const newQuantity = quantity - 1;
-      await fetchAdd(productId, newQuantity);
+      await fetchAdd(productId, newQuantity, URL);
 
       const updatedCart = updateProductQuantity(copiProducts, productId, newQuantity);
       setcopiProducts(updatedCart);
@@ -103,13 +113,32 @@ export const CartPage = () => {
   };
 
 
-  
 
-  const sumatory= copiProducts.reduce((acumulador, valorActual)=> {
 
-    let suma = acumulador +(valorActual.product.price * valorActual.quantity)
+  const sumatory = copiProducts.reduce((acumulador, valorActual) => {
+
+    let suma = acumulador + (valorActual.product.price * valorActual.quantity)
     return suma
-  } ,0)
+  }, 0)
+
+
+  const fetchMercadoPago = async () => {
+
+    const response = await fetch(`http://localhost:8080/api/create_preference`, {
+      method: 'POST',
+      credentials: 'include',
+    })
+
+
+    if (response.ok) {
+      const result = await response.json()
+      console.log('response es: ', result)
+
+      setPreferenceId(result)
+    }
+
+  }
+
 
 
   return (
@@ -147,8 +176,8 @@ export const CartPage = () => {
                 <hr />
                 <div className="row">
 
-                  {copiProducts.length >1 ? <div className="col col-style">ITEMS {copiProducts.length}</div> : <div className="col col-style">ITEM {copiProducts.length}</div>}
-                  
+                  {copiProducts.length > 1 ? <div className="col col-style">ITEMS {copiProducts.length}</div> : <div className="col col-style">ITEM {copiProducts.length}</div>}
+
                   <div className="col text-right">$ {(sumatory).toLocaleString('es-ES')}</div>
                 </div>
                 <form>
@@ -161,7 +190,15 @@ export const CartPage = () => {
                   <div className="col">TOTAL PRICE</div>
                   <div className="col text-right total-price">$ {(sumatory).toLocaleString('es-ES')}</div>
                 </div>
-                <button className="shopping-btn">CHECKOUT</button>
+
+                <div className="btn-check-container">
+                  <button className="shopping-btn" onClick={fetchMercadoPago}>CHECKOUT</button>
+
+                  {preferenceId &&
+                    <Wallet className="shopping-btn" initialization={{ preferenceId }} />
+                  }
+                </div>
+
               </div>
             </div>
 

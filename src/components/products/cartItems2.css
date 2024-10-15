@@ -10,13 +10,12 @@
 
 .btn-info{
     position: absolute;
-    left: 80px;
-    border-radius: 50%;
-    height: 22px;
-    width: 22px;
-    background: #bae4eb;
-    color: #000000;
-    font-weight: 700;
+    left: 120px;
+    font-size: 20px;
+    color: blue;
+    font-weight: 400;
+    top: -5px;
+  
 }
 
 .pf-container{

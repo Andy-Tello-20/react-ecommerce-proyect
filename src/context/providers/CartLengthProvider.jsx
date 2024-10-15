@@ -23,6 +23,8 @@ export const CartLengthProvider = ({ children }) => {
 
        
         const fetchData = async () => {
+
+          
           try {
             const response = await fetch('http://localhost:8080/api/userCart', {
               method: 'GET',
@@ -35,7 +37,7 @@ export const CartLengthProvider = ({ children }) => {
     
             const result = await response.json();
 
-            setData(result.cart.products.length);
+            setData(result.products.length);
 
     
           } catch (err) {
