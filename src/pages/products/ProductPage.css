@@ -33,7 +33,43 @@
 }
 
 
-@media (max-width:768px){
+.star-product{
+    height: 400px;
+}
+
+.filter-img{
+    height: 400px;
+    width: 100%;
+}
+
+.filter-one{
+    height: 100%;
+    padding: 0 10px 0 0;
+    height: 300px;
+}
+
+.filter-two{
+    height: 100%;
+    padding: 0 0 0 10px;
+    height: 300px;
+}
+
+
+.filter-one img , .filter-two  img , .star-product img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+@media (max-width:767px){
+
+    .filter-one, .filter-two{
+        padding: 0px;
+    }
+
+
     .container{
         padding:20px;
     }

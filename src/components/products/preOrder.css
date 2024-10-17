@@ -2,7 +2,7 @@
 
 
 :root {
-    --buttons-color : #7cbf1e;
+    --buttons-color : #5b3ef0;
 }
 
 body{
@@ -22,12 +22,12 @@ body{
     max-width: 1184px;
     padding: 2rem;
     background: #fff;
-    margin: auto;
+    margin: auto !important;
     width: 90%;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1rem;
     border: transparent;
-    height: 540px;
+    /* height: 540px; */
 }
 
 .image-container{

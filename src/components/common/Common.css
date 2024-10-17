@@ -1,12 +1,27 @@
-
-
-.swiper{
+.swiper {
   margin-bottom: 3rem;
-  width: 100%;
+  width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+  overflow: hidden; /* Previene el desbordamiento de contenido */
 }
 
-.swiper-pagination{
-  bottom: 30px !important;
+.swiper-slide {
+  
+  flex-grow: 1;
+  /* margin: 0px !important; */
+  display: flex; /* Asegúrate de que las diapositivas sean flexibles */
+  justify-content: center; /* Centra el contenido en la diapositiva */
+  align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.swiper img {
+  width: 100%; /* Asegúrate de que las imágenes ocupen el 100% de la diapositiva */
+  /* height: auto; Mantén la proporción de la imagen */
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  bottom: 30px !important; /* Ajusta la posición de la paginación */
 }
 
 span.swiper-pagination-bullet {
@@ -15,35 +30,28 @@ span.swiper-pagination-bullet {
   background: var(--buttons-color);
 }
 
-
-.swiper-button-next, .swiper-button-prev{
+.swiper-button-next, .swiper-button-prev {
   padding: 25px !important;
   background: #a8a7a7;
   border-radius: 10px;
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover{
-background: rgba(71, 201, 115, 1) !important;
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background: rgba(71, 201, 115, 1) !important;
 }
-
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   content: 'next';
   color: var(--buttons-color);
   font-weight: 700;
   font-size: 27px !important;
-    color: #fff;
+  color: #fff;
 }
-
-
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
   content: 'prev';
   color: var(--buttons-color);
   font-weight: 700;
   font-size: 27px !important;
-    color: #fff;
+  color: #fff;
 }
-
-
-

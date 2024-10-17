@@ -217,7 +217,7 @@ margin-bottom: 0px !important;
   color: #0b0217;
 }
 .form_container .button, .register_container .button {
-  background: #242425;
+  background: #5b3ef0;
     margin-top: 30px;
     width: 100%;
     padding: 10px 0;
@@ -234,16 +234,12 @@ margin-bottom: 0px !important;
 
 
 .home-section{
-  display: flex;
-  flex-direction: column;
-  position: relative;
   min-height: 100vh;
-  top: 0;
   /* left: 78px;
   width: calc(100% - 78px); */
-  transition: all 0.5s ease;
   background: #ebebeb;
-  z-index: 2;
+ 
+
 }
 .sidebar.open ~ .home-section{
   left: 250px;

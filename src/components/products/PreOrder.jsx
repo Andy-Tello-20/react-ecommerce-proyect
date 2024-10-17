@@ -24,12 +24,12 @@ export const PreOrder = ({ item, listActions }) => {
     const { title, description, thumbnail, price, _id,stock } = item
 
     return (
-        <div className="card-show-container">
-            <section className="image-container col-lg-7 col-md-7 col-sm-6 p-2">
+        <div className="row card-show-container">
+            <section className="image-container col-sm-6 p-2">
                 <img src={thumbnail} alt="" />
             </section>
             {/* <hr className="separator" /> */}
-            <section className="data-container col-md-5">
+            <section className="data-container col-sm-6">
                 <h1 className="product-title">{title}</h1>
                 <div className="stars-valuation">
                         <i className='bx bxs-star' ></i>
@@ -40,9 +40,9 @@ export const PreOrder = ({ item, listActions }) => {
                     </div>
                 <p className='price-info'>Stock: {stock}</p>
 
-                 <div className="price-info-container">
-                    <p className='price-info'>Precio especial</p>
-                    <p className="product-price">${price.toLocaleString('es-ES')}</p>
+                 <div className="row price-info-container">
+                    <p className='col-md-6 price-info'>Precio especial</p>
+                    <p className="col-md-6 product-price">${price.toLocaleString('es-ES')}</p>
                  </div>
 
                 
