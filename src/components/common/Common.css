@@ -1,7 +1,9 @@
 .swiper {
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+  height: 100%;
   overflow: hidden; /* Previene el desbordamiento de contenido */
+
 }
 
 .swiper-slide {
@@ -37,14 +39,14 @@ span.swiper-pagination-bullet {
 }
 
 .swiper-button-next:hover, .swiper-button-prev:hover {
-  background: rgba(71, 201, 115, 1) !important;
+  background: #5b3ef0 !important;
 }
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   content: 'next';
   color: var(--buttons-color);
   font-weight: 700;
-  font-size: 27px !important;
+  font-size: 22px !important;
   color: #fff;
 }
 
@@ -52,6 +54,6 @@ span.swiper-pagination-bullet {
   content: 'prev';
   color: var(--buttons-color);
   font-weight: 700;
-  font-size: 27px !important;
+  font-size: 22px !important;
   color: #fff;
 }

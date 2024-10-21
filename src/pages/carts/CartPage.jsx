@@ -26,7 +26,7 @@ export const CartPage = () => {
 
   const { fetchAdd } = AddProductToCart()
 
-  const { fetchMercadoPago, loading, preferenceId } = Purchase()
+  const { fetchMercadoPago, loading, setLoading ,preferenceId,setPreferenceId } = Purchase()
 
   const { data: newData, fetchDelete } = DeleteProductToCart();
 
@@ -89,6 +89,7 @@ export const CartPage = () => {
   };
 
   const URL = 'http://localhost:8080/api/carts/product'
+
   const handleIncrease = async (productId, quantity) => {
     const newQuantity = quantity + 1;
     await fetchAdd(productId, newQuantity, URL);
@@ -96,6 +97,8 @@ export const CartPage = () => {
 
     const updatedCart = updateProductQuantity(copiProducts, productId, newQuantity);
     setcopiProducts(updatedCart);
+    setPreferenceId(false)
+    setLoading(null)
 
 
   };
@@ -107,6 +110,8 @@ export const CartPage = () => {
 
       const updatedCart = updateProductQuantity(copiProducts, productId, newQuantity);
       setcopiProducts(updatedCart);
+      setPreferenceId(false)
+      setLoading(null)
 
     }
   };

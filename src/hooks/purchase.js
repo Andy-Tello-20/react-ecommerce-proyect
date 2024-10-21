@@ -41,6 +41,6 @@ export const Purchase = () => {
 
     }
 
-    return { fetchMercadoPago, loading, preferenceId }
+    return { fetchMercadoPago, loading, preferenceId,setPreferenceId,setLoading }
 }
 

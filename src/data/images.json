@@ -1,0 +1,45 @@
+[
+    {
+        "id":1,
+        "url": "https://mlx.com.ar/wp-content/uploads/Slide_PCArmadas-jpg.webp",
+        "title":"slide0"
+
+    },
+    {
+        "id":2,
+        "url":"https://mlx.com.ar/wp-content/uploads/Slide_CM-42.png" ,
+        "title": "slide1"
+
+    },
+    {
+        "id":3,
+        "url": "https://mlx.com.ar/wp-content/uploads/Slide_Actualizacion.png",
+        "title":"slide2"
+
+    },
+    {
+        "id":4,
+        "url":"https://mlx.com.ar/wp-content/uploads/Slide_MODOsep.png" ,
+        "title":"slide3"
+
+    },
+    {
+        "id":5,
+        "url":"https://mlx.com.ar/wp-content/uploads/Slide_Intel-2.png" ,
+        "title":"slide4"
+
+    },
+    {
+        "id":6,
+        "url": "https://mlx.com.ar/wp-content/uploads/Slide_AMD9000.png",
+        "title":"slide5"
+
+    },
+    {
+        "id":7,
+        "url":"https://mlx.com.ar/wp-content/uploads/WEBBANNER-SC-MLX-PRODUCTOS-jpg.webp" ,
+        "title":"slide6"
+
+    }
+    
+]

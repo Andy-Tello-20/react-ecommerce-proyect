@@ -11,8 +11,8 @@ export const ProductCard = ({ productos, listActions }) => {
     const { thumbnail, title, price, id } = productos
 
     return (
-        <Link to={`verMas/${id}`} >
-            <div className="product-card mb-4">
+        <Link className='product-link' to={`verMas/${id}`} >
+            <div className="product-card ">
 
                 {listActions && (
                     <div className="logo-cart">

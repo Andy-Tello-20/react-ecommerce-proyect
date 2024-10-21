@@ -9,6 +9,7 @@ import { LoaderSpinner } from '../../components/common/Loader';
 import { SwipperCarousel } from '../../components/common/SwipperCarousel';
 import { PreOrder } from '../../components/products/PreOrder';
 import { SpinnerContainer } from '../../components/common/SpinnerContainer';
+import dataImages from '../../data/images.json'
 
 
 export const ProductListPage = () => {
@@ -43,6 +44,17 @@ export const ProductListPage = () => {
 
 
 
+   const productCards= first.map((p) => (
+    <ProductCard
+      productos={p}
+      key={p._id}
+    />
+  ))
+
+  const imagesLinks = dataImages.map((i) => (
+    <img src={i.url} alt={i.title} key={i.id}/>
+  ))
+
   console.log('que es first', first)
 
   if (loadingProducts) {
@@ -62,46 +74,34 @@ export const ProductListPage = () => {
           <>
 
 
-            <div className="carousel-container">
-              <SwipperCarousel productos={first} cardItem={ProductCard} />
+            <div className="carousel-container mb-5">
+              <SwipperCarousel productos={imagesLinks} slides={1} autoplay={true} breakpoint={false} />
             </div>
 
-            <div className="container ">
+{/* ver si conviene o no la clase container */}
+            <div className="container">
 
               <div className="row start pb-3 p-0">
 
+                <section className='col-md-8 filter-two mb-3'>
 
-                <div className="col-12 star-product mb-5 mt-3 p-0">
+                  <h2 className='swipper-products-title'>Ofertas</h2>
+            
+                  <SwipperCarousel  productos={productCards} space={15} autoplay={false} pagination={false}/>
+
+                </section>
+
+              <section className='col-md-4 filter-one mb-3 fade-in '>
+                  <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/01/ps5-2930282.jpg?tf=1200x" alt="" />
+                </section>
+
+
+                <div className="col-12 star-product mb-5 mt-3 p-0 fade-in ">
 
                   <img src="https://www.lg.com/content/dam/channel/wcms/pe/images/monitores/45gr75dc-b_awf_espr_pe_c/features/ultragear-45gr75dc-01-ultragear-d.jpg" alt="" />
                 </div>
 
-
-
-                <section className='col-md-4 filter-one mb-3'>
-                  <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/01/ps5-2930282.jpg?tf=1200x" alt="" />
-                </section>
-
-                <section className='col-md-8 filter-two mb-3'>
-                  <img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/wallpapers/rtx-3070/3070-header-r2.png" alt="" />
-                </section>
-
-
               </div>
-
-
-
-
-              <div className='products-container
-                 box-container'>
-                {first.map((p) => (
-                  <ProductCard
-                    productos={p}
-                    key={p._id}
-                  />
-                ))}
-              </div>
-
 
             </div>
           </>

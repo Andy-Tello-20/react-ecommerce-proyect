@@ -1,5 +1,3 @@
-// 
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Common.css';
@@ -9,90 +7,63 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export const SwipperCarousel = ({ productos }) => {
+export const SwipperCarousel = ({ productos, space = 0, slides = 4,
+  autoplay = true, pagination = true , breakpoint = true }) => {
+
   return (
-    <Swiper
+    <Swiper 
       modules={[Navigation, Pagination, Autoplay]}
       direction="horizontal"
       loop={true}
-      spaceBetween={0} // 👉 espacio entre contenido
-      slidesPerView={1} //👉 cantidad de imagenes por vista
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}  //👉 cada 5 segundos pasa al siguiente contenido automaticamente 
-
-      pagination={{ clickable: true }}
+      spaceBetween={space} // Espacio entre contenido
+      slidesPerView={slides} // Cantidad de imágenes por vista
+      autoplay={
+        autoplay
+          ? {
+            delay: 5000,
+            disableOnInteraction: false,
+          }
+          : false
+      }
+      pagination={pagination ? { clickable: true } : false}
       navigation={true}
       scrollbar={{ draggable: true }}
-      // breakpoints={{
-      //   320: {
-      //     slidesPerView: 1, // Muestra 1 slide para pantallas pequeñas
-      //     // spaceBetween: 5,
-      //   },
-      //   768: {
-      //     slidesPerView: 2, // Muestra 2 slides para pantallas medianas
-      //     // spaceBetween: 10,
-      //   },
-      //   1024: {
-      //     slidesPerView: 3, // Muestra 3 slides para pantallas grandes
-      //     // spaceBetween: 15,
-      //   },
-      //   1200: {
-      //     slidesPerView: 4, // Muestra 4 slides para pantallas muy grandes
-      //     // spaceBetween: 20,
-      //   },
-      // }}
+      breakpoints={
+        breakpoint
+          ? {
+            300:{
+              slidesPerView:2,
+              spaceBetween:space
+            },
+            400: {
+              slidesPerView: 3,
+              spaceBetween: space, // Espacio entre slides para pantallas pequeñas
+            },
+            // 768: {
+            //   slidesPerView: 3,
+            //   spaceBetween: space, // Espacio entre slides para pantallas medianas
+            // },
+            // 1024: {
+            //   slidesPerView: 3,
+            //   spaceBetween: space, // Espacio entre slides para pantallas grandes
+            // },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: space, // Espacio entre slides para pantallas muy grandes
+            }
+          }
+          : false
+      }
     >
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_PCArmadas-jpg.webp"
-          alt="Slide 1"
-          
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_CM-42.png"
-          alt="Slide 2"
-    
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_Actualizacion.png"
-          alt="Slide 3"
-  
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_MODOsep.png"
-          alt="Slide 4"
-   
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_Intel-2.png"
-          alt="Slide 5"
-     
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/Slide_AMD9000.png"
-          alt="Slide 6"
-    
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://mlx.com.ar/wp-content/uploads/WEBBANNER-SC-MLX-PRODUCTOS-jpg.webp"
-          alt="Slide 7"
-       
-        />
-      </SwiperSlide>
+      {Array.isArray(productos) && productos.length > 0 ? (
+        productos.map((i, index) => (
+          <SwiperSlide key={i.id || index}> {/* Usa un identificador único si está disponible */}
+            {i}
+          </SwiperSlide>
+        ))
+      ) : (
+        <SwiperSlide>No hay productos disponibles.</SwiperSlide>
+      )}
     </Swiper>
   );
 };

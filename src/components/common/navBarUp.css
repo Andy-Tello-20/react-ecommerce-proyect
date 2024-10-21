@@ -1,12 +1,5 @@
 /* Googlefont Poppins CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 body {
   min-height: 100vh;
@@ -76,9 +69,6 @@ body {
   display: flex;
 }
 
-.links  li:hover{
-  background: var(--buttons-color);
-}
 
 .nav-container .navbar .links li {
   position: relative;
@@ -90,7 +80,9 @@ body {
   height: 100%;
 }
 
-.nav-container .navbar .links li a ,.carrito-btn, .button-login{
+.nav-container .navbar .links li a,
+.carrito-btn,
+.button-login {
   height: 80%;
   text-decoration: none;
   white-space: nowrap;
@@ -99,7 +91,10 @@ body {
   font-weight: 500;
 }
 
-.button-login{
+
+
+
+.button-login {
   border: none;
   background: none;
 }
@@ -111,10 +106,10 @@ body {
   color: #000;
 }
 
-.carrito-btn{
-display: flex;
-align-items: center;
-padding: 0 10px;
+.carrito-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 
 li.bx.bx-cart-alt {
@@ -150,7 +145,10 @@ li.bx.bx-cart-alt {
   z-index: 3;
 }
 
- .li-data:hover ,.carrito-btn:hover, .drop-perfil:hover, .li-exit:hover{
+.li-data:hover,
+.carrito-btn:hover,
+.drop-perfil:hover,
+.li-exit:hover {
   background: var(--buttons-color);
 }
 
@@ -286,8 +284,8 @@ li.bx.bx-cart-alt {
     position: absolute;
     top: -9px;
     left: 25px;
-  
-    
+
+
   }
 
   .navbar .bx-menu {
@@ -301,7 +299,7 @@ li.bx.bx-cart-alt {
     display: block;
     max-width: 270px;
     width: 100%;
-    background: #5b3ef0;
+    background: #5338db;
     line-height: 40px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -312,7 +310,7 @@ li.bx.bx-cart-alt {
   .navbar .nav-links .sidebar-logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .sidebar-logo .logo-name {
