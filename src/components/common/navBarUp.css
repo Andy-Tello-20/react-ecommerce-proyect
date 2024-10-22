@@ -67,6 +67,7 @@ body {
 
 .nav-container .navbar .links {
   display: flex;
+  align-items: center;
 }
 
 

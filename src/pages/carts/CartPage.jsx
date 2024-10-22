@@ -157,6 +157,7 @@ export const CartPage = () => {
 
 
                 </div>
+                
                 <CartItems2 productos={copiProducts} cartActions={{
                   onRemove: (id) => handleRemove(id),
                   onIncrease: (id, q) => handleIncrease(id, q),

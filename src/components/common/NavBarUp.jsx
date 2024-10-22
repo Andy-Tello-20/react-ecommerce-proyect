@@ -37,7 +37,7 @@ export const NavBarUp = () => {
 
 
     const { isAuthenticated, setIsAuthenticated } = useContext(SessionContext2)
-    const { togleForm,togleRegister } = useContext(loginContext)
+    const { togleForm, togleRegister } = useContext(loginContext)
 
     const generalShow = (setState, currentState) => {
         setState(!currentState);
@@ -81,15 +81,16 @@ export const NavBarUp = () => {
                         <ul className="links">
                             {/* <li><Link to="/">Inicio</Link></li> */}
                             <li className='drop-container'>
+
                                 <div className="drop-perfil">
-                                <Link to="#">PERFIL</Link>
-                                <i className='bx bxs-chevron-down htmlcss-arrow arrow' onClick={() => generalShow(setDropdownOne, dropdownOne)}></i>
+                                    <Link to="#">Perfil</Link>
+                                    <i className='bx bxs-chevron-down htmlcss-arrow arrow' onClick={() => generalShow(setDropdownOne, dropdownOne)}></i>
                                 </div>
-                                
+
                                 <ul className={dropdownOne ? "htmlCss-sub-menu sub-menu showDrop" : "htmlCss-sub-menu sub-menu "}>
-                                    
-                                    <li className='li-data'><Link to="/profile">Tus datos</Link></li>  
-                                    <li className='li-data'><Link to="/profile">Configuracion</Link></li>  
+
+                                    <li className='li-data'><Link to="/profile">Tus datos</Link></li>
+                                    <li className='li-data'><Link to="/profile">Configuracion</Link></li>
                                     {/* <li className="more">
                                         <span><Link to="#">More</Link>
                                             <i className='bx bxs-chevron-right arrow more-arrow' onClick={() => generalShow(setDropdownTwo, dropdownTwo)}></i>
@@ -115,9 +116,17 @@ export const NavBarUp = () => {
 
 
 
-                         
-                            <Link className='carrito-btn' to="/cart">CARRITO
-                                <li className="bx bx-cart-alt">
+                            <li className="li-shopping">
+
+
+                                <Link className='carrito-btn' to="/shopping">Mis Compras</Link>
+
+
+                            </li>
+
+
+                            <Link className='carrito-btn' to="/cart">
+                                <li className="bx bx-cart-alt pr-0">
 
 
                                     {data > 0 && <div className="i-badge">{dataLength}</div>}
@@ -126,7 +135,9 @@ export const NavBarUp = () => {
                                 </li>
                             </Link>
 
-                            <li className='li-exit'><Link to="#" onClick={sessionClose}>SALIR</Link></li>
+                            <li className='li-exit'>
+                                <Link to="#" onClick={sessionClose}>Salir</Link>
+                            </li>
                         </ul>
 
                         :

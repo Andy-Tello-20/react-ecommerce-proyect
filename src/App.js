@@ -15,6 +15,7 @@ import ProtectedRoute from './pages/auth/ProtectedRoute';
 import PublicRoute from './pages/auth/PublicRoute';
 import { CartLengthProvider } from './context/providers/CartLengthProvider';
 import { LoginProvider } from './context/providers/LoginProvider';
+import { Shopping } from './pages/shopping/Shopping';
 
 
 
@@ -53,7 +54,16 @@ function App() {
 
 
                 <Route path='/product/:id' element={<ProductDetailPage />} />
-                <Route path='/checkout' element={<CheckoutPage />} />
+
+                <Route path='/shopping' element={
+
+                  <ProtectedRoute>
+                    <Shopping />
+                  </ProtectedRoute>
+
+
+                } 
+                />
 
                 <Route path='/profile' element={
 

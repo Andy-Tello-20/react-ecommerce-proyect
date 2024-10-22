@@ -6,7 +6,7 @@ export const Purchase = () => {
 
     const navigate = useNavigate()
     const [preferenceId, setPreferenceId] = useState(false)
-    const { setIsAuthenticated } = useContext(SessionContext2)
+    const {setIsAuthenticated } = useContext(SessionContext2)
     const [loading, setLoading] = useState(null);
 
     const fetchMercadoPago = async () => {

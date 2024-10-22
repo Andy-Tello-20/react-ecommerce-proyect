@@ -1,0 +1,209 @@
+/* .shop-row{
+    min-height: 540px;
+}
+
+.product-shop{
+    background: #fff;
+    border-radius: 8px;
+} */
+
+:root {
+    --blue: #2E43B0;
+    --purple: #32257E;
+    --gray1: #E5E5E5;
+    --gray2: #C6C6C6;
+    --gray3: #B6BAC5;
+  }
+  
+
+  
+  .receipt__body {
+    border-radius: 12px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid var(--gray1);
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+  
+  .left__name,
+  .left__items,
+  .left__total {
+    border-bottom: 1px solid var(--gray1); 
+  }
+  
+  
+  
+  .left__name span:nth-child(1) {
+    color: var(--purple);
+    font-size: 20px;
+    display: inline-block;
+    width: 50%;
+    line-height: 70px;
+    padding-left: 25px;
+  }
+  
+  .left__name span:nth-child(2) {
+    color: var(--gray2);
+    font-size: 15px;
+    display: inline;
+    float: right;
+    width: 50%;
+    line-height: 70px;
+    padding-left: 35px;
+  }
+  
+  .left__items {
+    flex-grow: 1;
+    padding-top: 12px;
+  }
+  
+  .left__items span {
+    color: var(--gray2);
+    text-transform: uppercase;
+    padding-left: 2px;
+  }
+  
+  .tickets {
+    display: block;
+    padding-top: 8px;
+  }
+  
+  .type {
+    color: var(--blue);
+    font-size: 20px;
+    vertical-align: middle;
+    padding-bottom: 7px;
+  }
+  
+  .type:before {
+    content: '';
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/ticket-icon.png);
+    width: 23px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: 23px 12px;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 2px;
+  }
+  
+  .price {
+    color: var(--gray3);
+    padding-left: 80px;
+    font-size: 15px;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+  
+  .price:before {
+    content: '$';
+    font-size: 15px;
+    font-weight: normal;
+    padding-right: 1px;
+  }
+  
+  /* .left__total {
+  
+  } */
+  
+  .left__total span {
+    color: var(--purple);
+    display: block;
+    line-height: 45px;
+  }
+  
+  .left__total span:nth-child(1) {
+    padding-top: 5px;
+  }
+  
+  .left__total span:nth-child(2) {
+    margin-top: -10px;
+  }
+  
+  .left__notice { 
+   
+    margin: 15px 0px;
+  }
+  
+  .left__notice span {
+   color: var(--purple)
+  }
+
+  .left__notice span b {
+    font-size: 12px;
+
+  }
+  
+  .right {
+    border-left: solid 1px var(--gray1);
+    float: left;
+  }
+  
+  .right__poster {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 149px;
+    height: 229.8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .right__poster#John-Wick-Chapter-2 {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/pen--john-wick-2.jpg') no-repeat;
+    background-size: contain;
+  }
+  
+  .right__title {
+    color: var(--blue);
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    text-align: center;
+  }
+  
+  .right__time {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .right__time span:nth-child(1) {
+    color: var(--gray2);
+    font-size: 15px;
+    text-transform: uppercase;
+    display: block;
+    padding-top: 20px;
+  }
+  
+  .right__time span:nth-child(2) {
+    color: var(--blue);
+    font-size: 20px;
+    display: block;
+  }
+  
+  .right__cinema {
+    width: 50%;
+
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .right__cinema span:nth-child(1) {
+    color: var(--gray2);
+    font-size: 15px;
+    text-transform: uppercase;
+    display: block;
+    padding-top: 25px;
+  }
+  
+  .right__cinema span:nth-child(2) {
+    color: var(--blue);
+    font-size: 20px;
+    display: block;
+  }
+  
