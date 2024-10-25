@@ -1,13 +1,19 @@
 .increment-decrement{
     display: flex;
     align-items: center;
-    border: solid 1px #c0c0c0;
+    /* border: solid 1px #c0c0c0; */
     border-radius: 8px;
-    width: 150px;
+    /* width: 149px; */
+    /* gap: 15px; */
+    height: 44px;
     justify-content: center;
 
 }
 
+.quantite{
+ 
+    font-weight: 600;
+}
 
 .stars-valuation{
     font-size: 22px;
@@ -15,19 +21,21 @@
 }
 
 .btn-decrement, .btn-increment{
-    height: 100%;
-    background: none;
+    
     border: none;
     width: 35px;
     font-weight: 500;
+    height: 35px;
     font-size: 20px;
+    border-radius: 50%;
+    background: #cecece;
 }
 
 .btn-decrement{
-    margin-right: 10px;
+    margin-right: 22px;
 }
 
 .btn-increment{
-    margin-left: 10px;
+    margin-left: 22px;
     color: #66a9cd;
 }

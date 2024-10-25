@@ -227,10 +227,10 @@ margin-bottom: 0px !important;
 
 
 .home-section{
+  display: flex;
   min-height: 100vh;
-  /* left: 78px;
-  width: calc(100% - 78px); */
   background: #ebebeb;
+  flex-direction: column;
  
 
 }

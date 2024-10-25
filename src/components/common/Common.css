@@ -15,16 +15,16 @@
   align-items: center; /* Alinea verticalmente el contenido */
 }
 
-.swiper img {
-  width: 100%; /* Asegúrate de que las imágenes ocupen el 100% de la diapositiva */
-  /* height: auto; Mantén la proporción de la imagen */
-  height: 300px;
-  object-fit: cover;
-}
+/* .swiper img {
+  width: 100%;
+  height: 100% !important;
+  
+} */
 
-.swiper-pagination {
-  bottom: 30px !important; /* Ajusta la posición de la paginación */
-}
+ /* Ajusta la posición de la paginación */
+/* .swiper-pagination {
+  bottom: 30px !important;
+} */
 
 span.swiper-pagination-bullet {
   width: 15px;
@@ -33,27 +33,27 @@ span.swiper-pagination-bullet {
 }
 
 .swiper-button-next, .swiper-button-prev {
-  padding: 25px !important;
-  background: #a8a7a7;
+  /* padding: 25px !important;
+  background: #a8a7a7; */
   border-radius: 10px;
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
+/* .swiper-button-next:hover, .swiper-button-prev:hover {
   background: #5b3ef0 !important;
-}
+} */
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   content: 'next';
   color: var(--buttons-color);
   font-weight: 700;
-  font-size: 22px !important;
-  color: #fff;
+  font-size: 25px !important;
+  /* color: #fff; */
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
   content: 'prev';
   color: var(--buttons-color);
   font-weight: 700;
-  font-size: 22px !important;
-  color: #fff;
+  font-size: 25px !important;
+  /* color: #fff; */
 }

@@ -170,20 +170,20 @@
     0 0 0 4px #F5DA00;
 }
 
-.show-color-price .price {
+.show-color-price .card-price {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.show-color-price .price .price_nu {
+.price_nu {
   font-size: 25px;
   font-weight: 600;
   color: #707070;
 }
 
-.show-color-price .price .price_letter {
+.show-color-price .card-price .price_letter {
   font-size: 10px;
   font-weight: 600;
   margin-top: -4px;

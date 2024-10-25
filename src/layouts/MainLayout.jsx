@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from '../components/common/Header';
 import './main.css'
+import { Footer } from '../components/common/Footer';
 // import { CartLengthProvider } from '../context/providers/CartLengthProvider';
 
 
@@ -9,7 +10,6 @@ import './main.css'
 export const MainLayout = () => {
 
   // console.log('mainLayout. se ejecuto...')
-
 
   return (
     <>
@@ -23,6 +23,7 @@ export const MainLayout = () => {
         </main>
       {/* </CartLengthProvider> */}
 
+    <Footer/>
     </>
   );
 };

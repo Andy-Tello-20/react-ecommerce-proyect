@@ -30,42 +30,38 @@
     float: left;
   }
   
-  .left__name,
-  .left__items,
-  .left__total {
+  .left__name {
     border-bottom: 1px solid var(--gray1); 
+    
   }
   
-  
+  .left__name{
+    display: flex;
+    justify-content: start;
+  }
   
   .left__name span:nth-child(1) {
-    color: var(--purple);
-    font-size: 20px;
+    color: #000;
+    font-size: 16px;
     display: inline-block;
-    width: 50%;
-    line-height: 70px;
-    padding-left: 25px;
+    line-height: 45px;
+
   }
   
-  .left__name span:nth-child(2) {
-    color: var(--gray2);
-    font-size: 15px;
-    display: inline;
-    float: right;
-    width: 50%;
-    line-height: 70px;
-    padding-left: 35px;
-  }
-  
+
   .left__items {
     flex-grow: 1;
-    padding-top: 12px;
+    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .left__items span {
-    color: var(--gray2);
+    color: #47b256;
     text-transform: uppercase;
     padding-left: 2px;
+    font-weight: 600;
   }
   
   .tickets {
@@ -107,49 +103,60 @@
     padding-right: 1px;
   }
   
-  /* .left__total {
-  
-  } */
+  .left__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .left__total span {
-    color: var(--purple);
+    color: gray;
     display: block;
     line-height: 45px;
   }
   
-  .left__total span:nth-child(1) {
-    padding-top: 5px;
+  .left__total span b {
+    font-weight: 700;
+    color: #000;
   }
+ 
   
   .left__total span:nth-child(2) {
     margin-top: -10px;
   }
   
   .left__notice { 
-   
-    margin: 15px 0px;
+    display: flex;
+    margin: 10px 0px;
+    justify-content: center;
   }
   
   .left__notice span {
-   color: var(--purple)
+   color: gray
   }
 
   .left__notice span b {
     font-size: 12px;
-
+    color: #000
   }
   
   .right {
-    border-left: solid 1px var(--gray1);
     float: left;
+  }
+
+  .img-only{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .right__poster {
     margin: 0 auto;
-    margin-top: 30px;
-    width: 149px;
-    height: 229.8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 67%;
+    height: 200px;
+
+    border-radius: 8px;
+
   }
   
   .right__poster#John-Wick-Chapter-2 {

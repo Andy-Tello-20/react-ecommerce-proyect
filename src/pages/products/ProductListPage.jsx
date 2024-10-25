@@ -52,7 +52,7 @@ export const ProductListPage = () => {
   ))
 
   const imagesLinks = dataImages.map((i) => (
-    <img src={i.url} alt={i.title} key={i.id}/>
+    <img className={'imgLinks'} src={i.url} alt={i.title} key={i.id}/>
   ))
 
   console.log('que es first', first)
@@ -74,12 +74,12 @@ export const ProductListPage = () => {
           <>
 
 
-            <div className="carousel-container mb-5">
+            <div className="carousel-container mb-4 mb-sm-5">
               <SwipperCarousel productos={imagesLinks} slides={1} autoplay={true} breakpoint={false} />
             </div>
 
 {/* ver si conviene o no la clase container */}
-            <div className="container">
+            <div className="container class-container-home">
 
               <div className="row start pb-3 p-0">
 
@@ -92,13 +92,22 @@ export const ProductListPage = () => {
                 </section>
 
               <section className='col-md-4 filter-one mb-3 fade-in '>
-                  <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/01/ps5-2930282.jpg?tf=1200x" alt="" />
+                  <img src="https://st2.depositphotos.com/4960805/43031/i/450/depositphotos_430310836-stock-photo-playstation-dual-sense-controller-sao.jpg" alt="" />
+
+                  <h4 className='text-overlay onSaleTitle responsive-font'>Encuentra aqui el mejor precio</h4>
                 </section>
 
 
                 <div className="col-12 star-product mb-5 mt-3 p-0 fade-in ">
 
-                  <img src="https://www.lg.com/content/dam/channel/wcms/pe/images/monitores/45gr75dc-b_awf_espr_pe_c/features/ultragear-45gr75dc-01-ultragear-d.jpg" alt="" />
+                  <img src="https://www.shutterstock.com/shutterstock/videos/1069134196/thumb/1.jpg?ip=x480" alt="" />
+                  <div className='overlay-announcement '></div>
+
+                  <h3 className='text-overlay text-announcement responsive-font'>Muy pronto, tu consola preferida
+                  </h3>
+        
+
+                  {/* <p className=' text-overlay text-announcement-p ' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dignissimos fugit incidunt asperiores iure consequatur iusto .</p> */}
                 </div>
 
               </div>

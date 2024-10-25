@@ -10,8 +10,104 @@
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     transition: .2s linear;
+}
+
+:root{
+    --max-font:16 ;
+    --min-font:24 ;
+  
+
+    /* 👉 rangos desde 421px a 1199px */
+    /* 👉 utilizar las variables --min-font y --max-font en las fuentes que seran responsivas y la clase "responsive-font" */
+   
+    /* 👉 --EJEMPLO-- */
+
+/* 👉 h1 {
+    --max-font: 50;
+    --min-font: 25;
+  } */
+}
+
+
+.responsive-font {
+    font-size: calc(
+      (var(--min-font) * 1px) + 
+      (var(--max-font) - var(--min-font)) * 
+      ((100vw - 420px) / (1200 - 420))
+    );
+  }
+
+
+
+
+/* ELEVA SUTILMENTE EL BOTON O CARD QUE SE LE PASA EL MOUSE */
+.hover-effect {
+    transition: 0.2s ease-in;
+  }
+  
+  .hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
+  }
+/* ------------------------------------------------------------- */
+
+.onSaleTitle{
+    color: #141414;
+    --max-font:30 ;
+    --min-font:24 ; 
+    font-weight: 700;
+    top: 74%;
+    width: 89%;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-announcement{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.text-announcement{
+    
+    color: #ffff;
+    --max-font:40 ;
+    --min-font:24 ; 
+    font-weight: 700;
+    top: 50%;
+    width: 100%;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  
+}
+
+.text-overlay{
+    position: absolute;  
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.text-announcement-p{
+   
+    color: #ffff;
+    font-size: 13px;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
 }
 
 .container {
@@ -34,9 +130,28 @@
     gap: 20px;
 }
 
+.class-container-home{
+    max-width: 1300px;
+}
+
 
 .star-product {
-    height: 400px;
+    position: relative;
+    height: 140px;
+    border-radius: 8px;
+
+}
+
+
+
+.icons-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.icon-class{
+    font-size: 40px
 }
 
 .filter-img {
@@ -44,21 +159,21 @@
     width: 100%;
 }
 
-.start{
+/* .start{
 
-}
+} */
 
 .filter-one {
     height: 100%;
     padding: 0 0 0 10px;
-    height: 450px;
+    height: 400px;
     
 }
 
 .filter-two {
     height: 100%;
     padding: 0 10px 0 0;
-    height: 450px;
+    height: 400px;
     background:#fff;
     border-radius: 8px;
     display: flex;
@@ -67,13 +182,25 @@
 
 
 .filter-one img,
-.filter-two img,
 .star-product img {
     object-fit: cover;
-    height: 100%;
-    width: 100%;
     border-radius: 8px;
 
+}
+
+
+
+.filter-one img,
+.star-product img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.imgLinks{
+    width: 100%;
+    height: 100% 
 }
 
 .swipper-products-title{

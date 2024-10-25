@@ -8,12 +8,7 @@ body{
     background: #f8f8f8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+
   
 
 .card-show-container{
@@ -44,8 +39,14 @@ body{
 
 
 .data-container{
-    border: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
     padding: 15px;
+}
+
+.pre-description{
+    font-size: 14px;
+    text-align: center;
+    color: gray
 }
 
 .data-container > * {
@@ -60,41 +61,46 @@ body{
 
 .product-price{
     font-size: 36px;
-    font-weight: 500;
+    text-align: center;
+    font-weight: 700;
 }
 .product-title{
-    font-size: 22px;
+    font-size: 38px;
     font-weight: 600;
+    color: #898986;
+    text-align: center;
 
 }
-
+/* 
 .compra-detalle{
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
     align-items: flex-start;
-}
+    gap: 20px;
+} */
 
 .price-info-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 300px;
+    justify-content: center;
+    width: 100%;
 
 }
 
 .price-info{
     font-weight: 600;
+    text-align: center;
 }
 
 .btn-add-product{
+    height: 44px;
     background: var(--buttons-color);
     padding: 9px 15px;
-    border-radius: 7px !important;
+    border-radius: 25px !important;
     color: #fff;
     border: solid 1px #69e055;
     font-weight: 600;
-    width: 100%;
+ 
 }
 
 .btn-add-product:hover{

@@ -8,7 +8,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export const SwipperCarousel = ({ productos, space = 0, slides = 4,
-  autoplay = true, pagination = true , breakpoint = true }) => {
+  autoplay = true, pagination = true , breakpoint = true , navigation = true}) => {
+
+    console.log('recibo productos: ',productos)
 
   return (
     <Swiper 
@@ -26,7 +28,7 @@ export const SwipperCarousel = ({ productos, space = 0, slides = 4,
           : false
       }
       pagination={pagination ? { clickable: true } : false}
-      navigation={true}
+      navigation={navigation}
       scrollbar={{ draggable: true }}
       breakpoints={
         breakpoint
@@ -35,14 +37,14 @@ export const SwipperCarousel = ({ productos, space = 0, slides = 4,
               slidesPerView:2,
               spaceBetween:space
             },
-            400: {
-              slidesPerView: 3,
-              spaceBetween: space, // Espacio entre slides para pantallas pequeñas
-            },
-            // 768: {
+            // 400: {
             //   slidesPerView: 3,
-            //   spaceBetween: space, // Espacio entre slides para pantallas medianas
+            //   spaceBetween: space, // Espacio entre slides para pantallas pequeñas
             // },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: space, // Espacio entre slides para pantallas medianas
+            },
             // 1024: {
             //   slidesPerView: 3,
             //   spaceBetween: space, // Espacio entre slides para pantallas grandes
@@ -57,7 +59,7 @@ export const SwipperCarousel = ({ productos, space = 0, slides = 4,
     >
       {Array.isArray(productos) && productos.length > 0 ? (
         productos.map((i, index) => (
-          <SwiperSlide key={i.id || index}> {/* Usa un identificador único si está disponible */}
+          <SwiperSlide key={index}> {/* Usa un identificador único si está disponible */}
             {i}
           </SwiperSlide>
         ))

@@ -11,7 +11,7 @@ export const ProductCard = ({ productos, listActions }) => {
     const { thumbnail, title, price, id } = productos
 
     return (
-        <Link className='product-link' to={`verMas/${id}`} >
+        <Link className='product-link hover-effect ' to={`verMas/${id}`} >
             <div className="product-card ">
 
                 {listActions && (
@@ -33,7 +33,11 @@ export const ProductCard = ({ productos, listActions }) => {
 
                     {/* <p>{description}</p> */}
 
-                    <div className="stars">
+
+                </div>
+
+
+                <div className="stars">
                         <i className='bx bxs-star' ></i>
                         <i className='bx bxs-star' ></i>
                         <i className='bx bxs-star' ></i>
@@ -41,15 +45,9 @@ export const ProductCard = ({ productos, listActions }) => {
                         <i className='bx bx-star' ></i>
                     </div>
 
-
-                </div>
-
-
-
-
                 <div className='color-price'>
 
-                    <div className='price'>
+                    <div className='card-price'>
                         <span className='price_nu'>$ {price.toLocaleString('es-ES')}</span>
                     </div>
 
